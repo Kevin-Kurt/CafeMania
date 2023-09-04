@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900");
+@import url("./animations.scss");
+@import url("./card.scss");
+@import url("./input.scss");
+@import url("./text.scss");
+@import url("./button.scss");
+@import url("./tables.scss");
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+.v-expansion-panel-content__wrap {
+  text-align: left !important;
+  padding: 0px !important ;
+}
+.v-carousel__controls {
+  background: transparent !important;
+}
+.v-carousel__controls__item {
+  margin-top: 30px;
+  margin-inline: 1px !important;
+}
+.v-carousel__controls__item .v-btn__content .v-icon::before {
+  color: #fcfdfd;
+}
+.v-btn--active .v-btn__content .v-icon::before {
+  color: white;
+}
+.v-navigation-drawer--absolute {
+  z-index: 4 !important;
+}
+.v-list.v-sheet.theme--light {
+  padding: 16px !important;
+  box-shadow: 0px 12px 20px -8px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 16px !important;
+}
+.v-menu__content {
+  border-radius: 16px !important;
+}
+/* .v-navigation-drawer__content {
+  width: 100vw !important;
+} */
+/* .theme--dark.v-btn--active:hover::before,
+.theme--dark.v-btn--active::before {
+  opacity: 0 !important;
+} */
+.v-window__prev,
+.v-window__next {
+  display: none !important;
+}
+.my-layouts-enter-active,
+.my-layouts-leave-active {
+  transition: opacity 0.3s;
+}
+.my-layouts-enter,
+.my-layouts-leave-active {
+  opacity: 0;
+}
+
+html,
+body,
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  background-color: var(--v-mainBackground-base);
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--v-primary-base);
+  border-radius: 20px;
+}
+
+.v-menu__content::-webkit-scrollbar {
+  background-color: #e9e9e9;
+  width: 10px;
+  border-radius: 3.5px;
+}
+
+.v-menu__content::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 3.5px;
+}
+
+.v-dialog::-webkit-scrollbar {
+  background-color: #e9e9e9;
+  width: 10px;
+  border-radius: 3.5px;
+}
+
+.v-dialog::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 3.5px;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

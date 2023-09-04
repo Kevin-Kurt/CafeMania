@@ -1,0 +1,13 @@
+@mixin maxScreenSize() {
+    max-width: 50%;
+    min-width: 700px;
+    margin: 0 auto;
+
+    @media (max-width: 780px) {
+        max-width: 100%;
+        min-width: auto;
+    }
+}
+
+@mixin gradient() {
+}
