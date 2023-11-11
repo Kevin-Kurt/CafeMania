@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PTI.Data;
 
@@ -10,9 +11,10 @@ using PTI.Data;
 namespace PTI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231021224703_street")]
+    partial class street
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,12 +158,6 @@ namespace PTI.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("CardNumber")
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("Code")
-                        .HasColumnType("int");
-
                     b.Property<string>("Complement")
                         .HasColumnType("longtext");
 
@@ -220,9 +216,6 @@ namespace PTI.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
-
-                    b.Property<string>("Validity")
-                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 

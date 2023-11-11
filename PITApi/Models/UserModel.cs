@@ -25,6 +25,25 @@ namespace PTI.Models
     public string Password { get; set; }
   }
 
+  public class EditModel
+  {
+    public string? UserId { get; set; }
+    public string? Complement { get; set; }
+    public string? Street { get; set; }
+    public int? Number { get; set; }
+    public string? CardNumber { get; set; }
+    public int? Code { get; set; }
+    public string? Validity { get; set; }
+  }
+
+
+  public class RegisterModel
+  {
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
+  }
+
   public class AuthenticateUserDTO
   {
     public AuthenticateUserDTO(string Token, UserDTO User, DateTime Expires, int StatusCode)

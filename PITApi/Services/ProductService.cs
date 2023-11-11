@@ -19,6 +19,7 @@ using Sentry;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Operapp.Infra.Helpers;
 using PTI.Migrations;
+using PTI.Utils.Enums;
 
 namespace PTI.Services
 {
@@ -61,9 +62,14 @@ namespace PTI.Services
         products = products.OrderBy(x => x.Type);
       }
 
-      if (pager.Filter != null)
+      if (pager.Filter != null && pager.Filter != eTypes.clear)
       {
         products = products.Where(x => x.Type == pager.Filter);
+      }
+      else
+      {
+        products = products;
+
       }
       
       PaginatedObject result = await products.ReturnPaginated(pager.Page, pager.Pagesize);
