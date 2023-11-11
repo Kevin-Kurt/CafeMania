@@ -25,6 +25,10 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '' }],
   },
 
+  router: {
+    middleware: ['auth'],
+  },
+
   pageTransition: {
     name: 'page',
     mode: 'out-in',

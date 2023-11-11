@@ -37,7 +37,7 @@ export default function ({ $axios, $toast, store, error: nuxtError }) {
 
     if (error.response) {
       const code = error.response.data.statusCode
-      const message = error.response.data.message
+      const message = error.response.data.content
 
       $toast.error(message + ' - ' + 'Código: ' + code)
     }

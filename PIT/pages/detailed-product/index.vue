@@ -1,6 +1,8 @@
 <template>
   <div style="background-color: #FFDFCC; height: 100% !important;">
-
+    <v-dialog max-width="500" v-model="modal">
+      <modal-info @close="modal = false" :prop_product="product" :key="key"></modal-info>
+    </v-dialog>
     <div v-if="product" style="max-width: 1000px; margin: auto; padding-top: 40px;">
       <div class="ml-3">
         <v-btn @click="$router.push('/home')" icon>
@@ -23,7 +25,7 @@
               R$ {{ product.price }}
             </div>
             <div>
-              <div style="ont-size: 20px; font-weight: 600;">
+              <div style="font-size: 20px; font-weight: 600;">
                 Descrição
               </div>
               <div>
@@ -34,7 +36,7 @@
         </v-col>
         <v-col cols="12">
           <div class="d-flex" style="height: 100%; align-items: center; justify-content: flex-end;">
-            <v-btn width="300" height="40" color="primary">
+            <v-btn @click="modalOpen()" width="300" height="40" color="primary">
               Comprar
             </v-btn>
           </div>
@@ -44,12 +46,19 @@
   </div>
 </template>
 <script>
+import ModalInfo from '../../components/modalInfo.vue';
 export default {
   name: "FiquePorDentro",
-  components: {},
+  meta: {
+    requiresAuth: true,
+  },
+  components: { ModalInfo },
   data: () => ({
+    key: 0,
+    modal: false,
     product: null,
-    productId: null
+    productId: null,
+
   }),
 
   created() {
@@ -58,6 +67,13 @@ export default {
   },
 
   methods: {
+
+
+    modalOpen() {
+      this.key++
+      this.modal = true
+    },
+
     async getProduct() {
       await this.$axios
         .$get(`product/${this.productId}`)
